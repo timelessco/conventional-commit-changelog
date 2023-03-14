@@ -1,0 +1,104 @@
+{
+  "name": "node-js-library-template",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Template for production ready node js library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timelessco/node-js-library-template.git"
+  },
+  "homepage": "https://github.com/timelessco/node-js-library-template#readme",
+  "bugs": {
+    "url": "https://github.com/timelessco/node-js-library-template/issues"
+  },
+  "author": "Timeless <hello@timeless.co> (https://timeless.co/)",
+  "license": "MIT",
+  "private": true,
+  "main": "./lib/node-js-library-template.cjs",
+  "module": "./lib/node-js-library-template.js",
+  "exports": {
+    ".": {
+      "import": "./lib/node-js-library-template.js",
+      "require": "./lib/node-js-library-template.cjs"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "js",
+    "library",
+    "production",
+    "template",
+    "node"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "commit": "gacp",
+    "dev": "nodemon demo/main.js",
+    "format": "npm-run-all format:*",
+    "format:eslint": "eslint --cache --color --ext .js,.cjs,.jsx,.ts,.cts,.tsx . --fix",
+    "format:prettier": "prettier --write --cache --cache-location=.prettiercache --list-different \"./**/*.{html,css,js,cjs,jsx,ts,cts,tsx,md,json}\"",
+    "lint": "npm-run-all lint:*",
+    "lint:eslint": "eslint --cache --color --ext .js,.cjs,.jsx,.ts,.cts,.tsx .",
+    "lint:prettier": "prettier --check --cache --cache-location=.prettiercache \"./**/*.{html,css,js,cjs,jsx,ts,cts,tsx,md,json}\"",
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable",
+    "release": "release-it",
+    "release:check": "release-it --dry-run",
+    "test": "echo \"no test specified\" && exit 0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.4.4",
+    "@commitlint/config-conventional": "17.4.4",
+    "@ianvs/prettier-plugin-sort-imports": "3.7.1",
+    "@release-it/conventional-changelog": "5.1.1",
+    "eslint": "8.36.0",
+    "eslint-config-galex": "4.4.2",
+    "gacp": "3.0.3",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "nodemon": "2.0.21",
+    "npm-run-all": "4.1.5",
+    "pinst": "3.0.0",
+    "prettier": "2.8.4",
+    "prettier-plugin-pkg": "0.17.1",
+    "release-it": "15.8.0",
+    "rimraf": "4.4.0",
+    "tsup": "6.6.3"
+  },
+  "sideEffects": false,
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "last 2 versions",
+      "Firefox ESR",
+      "not dead"
+    ],
+    "development": [
+      "last 2 versions",
+      "not dead"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "gacp": {
+    "add": false,
+    "push": false,
+    "emoji": "emoji",
+    "editor": false
+  },
+  "lint-staged": {
+    "**/*.{js,cjs,jsx,ts,cts,tsx}": [
+      "pnpm lint:eslint"
+    ],
+    "**/*.{html,css,js,cjs,jsx,ts,cts,tsx,md,json}": [
+      "pnpm lint:prettier"
+    ]
+  },
+  "source": "./src/index.js"
+}
