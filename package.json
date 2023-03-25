@@ -50,12 +50,12 @@
     "test": "echo \"no test specified\" && exit 0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.4.4",
+    "@commitlint/cli": "17.5.0",
     "@commitlint/config-conventional": "17.4.4",
     "@ianvs/prettier-plugin-sort-imports": "3.7.1",
     "@release-it/conventional-changelog": "5.1.1",
     "eslint": "8.36.0",
-    "eslint-config-galex": "4.4.2",
+    "eslint-config-galex": "4.5.1",
     "gacp": "3.0.3",
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
@@ -66,7 +66,7 @@
     "prettier-plugin-pkg": "0.17.1",
     "release-it": "15.9.0",
     "rimraf": "4.4.0",
-    "tsup": "6.6.3"
+    "tsup": "6.7.0"
   },
   "sideEffects": false,
   "browserslist": {
